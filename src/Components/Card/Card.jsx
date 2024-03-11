@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export const CardComponent = ({flag,name,capital}) => {
+    const [isVisited, setisVisited] = useState(false)
+const handleIsVisited=()=>setisVisited(!isVisited)
     console.log(capital);
   return (
    <div className='border-8 rounded-xl border-black bg-[#282727] p-2'>
@@ -15,6 +17,8 @@ export const CardComponent = ({flag,name,capital}) => {
     <h1 className='text-center font-black text-2xl'>{name}</h1>
     <p className='text-center text-xl my-2'>Capital City</p>
     <h1 className='text-center'>{capital!==undefined ? capital[0]:"Unknown"}</h1>
+    <button onClick={handleIsVisited} className={` ${isVisited? "bg-green-500":"bg-red-500"} rounded-xl text-white px-2 py-1 `}>{isVisited? "Visited":"Visited?"}</button>
+   
     </div>
    </div>
   )
