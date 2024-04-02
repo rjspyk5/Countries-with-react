@@ -13,7 +13,7 @@ export const Countries = () => {
     <>
       <div>
         {visitedCountry.length > 0 && (
-          <h1 className="text-center font-bold">
+          <h1 className="text-center font-bold text-2xl">
             Total visited Country{visitedCountry.length}
           </h1>
         )}
